@@ -1,0 +1,15 @@
+server:
+  servlet.context-path: /ymlbusy
+  port: 8083
+name: liyunfei
+age: 25
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/liyunfei?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: li159753
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
