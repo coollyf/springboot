@@ -5,14 +5,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by acer on 2018/5/31.
  */
-@RestController
+//@RestController
 public class UserMapperController {
     @Autowired
     private UserMapperService userService;
+    private static final Logger logger = LoggerFactory.getLogger(UserMapperController.class);
 
     /**
      * 根据ID查询用户
@@ -24,6 +27,7 @@ public class UserMapperController {
         JsonResult r = new JsonResult();
         try {
             user user = userService.getUserById(id);
+
             r.setResult(user);
             r.setStatus("ok");
         } catch (Exception e) {
@@ -40,9 +44,11 @@ public class UserMapperController {
      */
     @RequestMapping(value = "users", method = RequestMethod.GET)
     public ResponseEntity<JsonResult> getUserList (){
+        logger.info("查询用户列表");
         JsonResult r = new JsonResult();
         try {
             List<user> users = userService.getUserList();
+            logger.info(users.toString());
             r.setResult(users);
             r.setStatus("ok");
         } catch (Exception e) {

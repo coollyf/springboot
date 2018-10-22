@@ -14,18 +14,13 @@ import java.util.List;
  * Created by acer on 2018/5/31.
  */
 public interface UserMapper {
-    @Select("SELECT * FROM user WHERE id = #{id}")
     user getUserById(Integer id);
 
-    @Select("SELECT * FROM user")
     public List<user> getUserList();
 
-    @Insert("insert into user(username, age, ctm) values(#{username}, #{age}, now())")
     public int add(user user);
 
-    @Update("UPDATE user SET username = #{user.username} , age = #{user.age} WHERE id = #{id}")
     public int update(@Param("id") Integer id, @Param("user") user user);
 
-    @Delete("DELETE from user where id = #{id} ")
     public int delete(Integer id);
 }

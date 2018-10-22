@@ -1,6 +1,7 @@
 package com.busy.impl;
 
 import com.busy.UserMapperService;
+import com.busy.UserService;
 import com.busy.user;
 import mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +15,9 @@ import java.util.List;
 @Service
 public class UserMapperServiceImpl implements UserMapperService{
     @Autowired
-    private UserMapper userMapper;
+    private UserMapper  userMapper;
+
+
 
     @Override
     public user getUserById(Integer id) {

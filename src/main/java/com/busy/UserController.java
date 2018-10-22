@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Created by acer on 2018/5/31.
  */
-@RestController
+//@RestController
 public class UserController {
     @Autowired
     private UserService userService;
