@@ -1,5 +1,7 @@
 package com.busy;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,8 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     /**
      * 根据ID查询用户
@@ -130,5 +134,8 @@ public class UserController {
         }
         return ResponseEntity.ok(r);
     }
-
+    @RequestMapping(value = "sayhello", method = RequestMethod.GET)
+    public String sayhello() {
+        return "Hello SpringBoot !";
+    }
 }

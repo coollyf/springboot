@@ -1,6 +1,6 @@
 server:
   servlet.context-path: /ymlbusy
-  port: 8083
+  port: 9086
 name: liyunfei
 age: 25
 spring:
@@ -13,22 +13,22 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-  kafka:
-      bootstrap-servers: DESKTOP-UEBN27J:9092
-      producer:
-        key-serializer: org.apache.kafka.common.serialization.StringSerializer
-        value-serializer: org.apache.kafka.common.serialization.StringSerializer
-      consumer:
-        group-id: test
-        enable-auto-commit: true
-        auto-commit-interval: 1000
-        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#  kafka:
+#      bootstrap-servers: DESKTOP-UEBN27J:9092
+#      producer:
+#        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#        value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      consumer:
+#        group-id: test
+#        enable-auto-commit: true
+#        auto-commit-interval: 1000
+#        key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#        value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
    # Redis 配置信息
   redis:
     database: 0
     host: 127.0.0.1
-    port: 6379
+    port: 6380
   #    password:
     timeout: 3000
     pool:
@@ -39,5 +39,16 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis/mybatis-config.xml
+  port: 8761
 
+
+  eureka:
+    client:
+      #表示是否将自己注册到Eureka Server上，默认为true，当前应用为Eureka Server所以无需注册
+      registerWithEureka: false
+      #表示是否从Eureka Server获取注册信息，默认为true。因为这是一个单点的Eureka Server，不需要同步其他的Eureka Server节点的数据，故而设为false。
+      fetchRegistry: false
+      #Eureka Server的访问地址，服务注册和client获取服务注册信息均通过该URL，多个服务注册地址用,隔开
+      serviceUrl:
+        defaultZone: http://localhost:9086/eureka/
 

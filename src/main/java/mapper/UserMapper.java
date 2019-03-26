@@ -2,10 +2,7 @@ package mapper;
 
 import com.busy.user;
 import org.apache.catalina.User;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -13,6 +10,7 @@ import java.util.List;
 /**
  * Created by acer on 2018/5/31.
  */
+@Mapper
 public interface UserMapper {
     user getUserById(Integer id);
 

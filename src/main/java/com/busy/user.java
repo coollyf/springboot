@@ -1,5 +1,6 @@
 package com.busy;
 
+import com.busy.annotation.Init;
 import com.sun.javafx.beans.IDProperty;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
@@ -12,6 +13,7 @@ import javax.persistence.GeneratedValue;
  */
 @Entity
 public class user {
+
     private String userName;
     private int age;
     @Id
@@ -37,7 +39,7 @@ public class user {
     public String getUserName() {
         return userName;
     }
-
+    @Init(value = "qweqw")
     public void setUserName(String username) {
         this.userName = username;
     }
