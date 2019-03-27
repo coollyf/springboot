@@ -10,6 +10,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 @SpringBootApplication
 @MapperScan("mapper")
 @EnableDiscoveryClient
+@EnableEurekaServer
 public class BusyApplication {
 
 	public static void main(String[] args) {
