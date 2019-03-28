@@ -23,7 +23,7 @@ public class HelloController {
     @Value("${server.port}")
     String port;
 
-    @RequestMapping(value = "hello", method = RequestMethod.GET)
+    @RequestMapping(value = "hello1", method = RequestMethod.GET)
     public String index() {
 
         StringBuffer uriList = new StringBuffer("Hello World " + port + " 端口为您服务！<br>");
