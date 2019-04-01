@@ -1,5 +1,7 @@
 package com.busy;
 
+import com.busy.model.UserInfo;
+
 import java.util.List;
 
 /**
@@ -15,4 +17,5 @@ public interface UserService {
     public int update(Integer id, user user);
 
     public int delete(Integer id);
+    public UserInfo findByUsername(String username);
 }

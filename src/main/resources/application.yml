@@ -52,3 +52,6 @@ mybatis:
       serviceUrl:
         defaultZone: http://localhost:9086/eureka/
 
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
