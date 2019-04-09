@@ -43,4 +43,5 @@ public interface UserInfoMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(UserInfo record);
+    public UserInfo findByUsername(String username);
 }

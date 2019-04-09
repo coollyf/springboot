@@ -4,6 +4,7 @@ import com.busy.UserService;
 import com.busy.model.UserInfo;
 import com.busy.user;
 import com.busy.userDao;
+import mapper.UserInfoMapper;
 import mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class UserServiceimpl implements UserService {
     @Autowired
     private userDao userdao;
     @Autowired
-    private UserMapper userMapper;
+    private UserInfoMapper userMapper;
 
     @Override
     public user getUserById(Integer id) {
